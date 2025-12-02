@@ -20,7 +20,19 @@ Each directory contains its own README with specific setup instructions and requ
 
 ## 📖 Projects
 
-Projects and examples will be added as I progress through learning each technology. Check individual directories for specific implementations.
+### Docker - Containerized Node.js Application
+
+A complete Docker learning project featuring:
+- Node.js Express application with MongoDB
+- Multi-container setup with Docker Compose
+- Mongo Express admin interface
+- Published on Docker Hub: [muhtasimapon/testapp](https://hub.docker.com/repository/docker/muhtasimapon/testapp/general)
+
+👉 [View Docker Project README](./Docker/README.md) for detailed setup and usage instructions.
+
+---
+
+Additional projects and examples will be added as I progress through learning each technology. Check individual directories for specific implementations.
 
 ## 🌱 More to Come
 
