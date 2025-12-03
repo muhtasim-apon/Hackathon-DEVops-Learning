@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FastAPI Backend with MongoDB - Production Ready API">
+    <title>FastAPI Backend - Professional API Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts. googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-rocket"></i>
+                <span>FastAPI Backend</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link active">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/todos" class="nav-link">
+                    <i class="fas fa-list-check"></i> Todos
+                </a>
+                <a href="/docs" class="nav-link" target="_blank">
+                    <i class="fas fa-book"></i> API Docs
+                </a>
+                <a href="https://github.com/muhtasim-apon" class="nav-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-code"></i>
+                <span>Production Ready</span>
+            </div>
+            <h1 class="hero-title">
+                Build <span class="gradient-text">Powerful APIs</span><br>
+                In Record Time
+            </h1>
+            <p class="hero-subtitle">
+                FastAPI + MongoDB + Modern Frontend = Your Next Hackathon Winner 🏆
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="apiUptime">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="totalRequests">0</div>
+                    <div class="stat-label">Requests</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="totalTodos">0</div>
+                    <div class="stat-label">Todos</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="/docs" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-play"></i> Explore API
+                </a>
+                <a href="/todos" class="btn btn-secondary">
+                    <i class="fas fa-tasks"></i> View Todos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need to build modern web applications</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Built on FastAPI with async support for maximum performance and scalability. </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Async/Await support</li>
+                        <li><i class="fas fa-check"></i> High concurrency</li>
+                        <li><i class="fas fa-check"></i> Low latency</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>MongoDB Integration</h3>
+                    <p>Seamless NoSQL database integration with MongoDB Atlas cloud platform.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Cloud-hosted database</li>
+                        <li><i class="fas fa-check"></i> Flexible schemas</li>
+                        <li><i class="fas fa-check"></i> Real-time queries</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Built-in security features with data validation and error handling.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Input validation</li>
+                        <li><i class="fas fa-check"></i> Error handling</li>
+                        <li><i class="fas fa-check"></i> CORS support</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Auto Documentation</h3>
+                    <p>Interactive API documentation generated automatically with Swagger UI.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Interactive testing</li>
+                        <li><i class="fas fa-check"></i> Real-time updates</li>
+                        <li><i class="fas fa-check"></i> OpenAPI schema</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>RESTful API</h3>
+                    <p>Complete CRUD operations with search, filter, and pagination support.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Full CRUD operations</li>
+                        <li><i class="fas fa-check"></i> Advanced filtering</li>
+                        <li><i class="fas fa-check"></i> Search functionality</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Deploy Anywhere</h3>
+                    <p>Ready to deploy on Railway, Render, Vercel, or any cloud platform.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Docker support</li>
+                        <li><i class="fas fa-check"></i> Environment configs</li>
+                        <li><i class="fas fa-check"></i> CI/CD ready</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-subtitle">Built with modern, battle-tested technologies</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python 3.13</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-server"></i>
+                    <span>FastAPI</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Status Section -->
+    <section class="api-status">
+        <div class="container">
+            <div class="status-card">
+                <div class="status-header">
+                    <h3>
+                        <i class="fas fa-heartbeat"></i>
+                        API Health Status
+                    </h3>
+                    <span class="status-badge" id="statusBadge">
+                        <i class="fas fa-circle"></i> Checking...
+                    </span>
+                </div>
+                <div class="status-details" id="statusDetails">
+                    <div class="status-item">
+                        <span class="status-label">Database:</span>
+                        <span class="status-value" id="dbStatus">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Response Time:</span>
+                        <span class="status-value" id="responseTime">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Last Checked:</span>
+                        <span class="status-value" id="lastChecked">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Something Amazing?</h2>
+                <p>Start exploring the API and build your next hackathon project</p>
+                <div class="cta-buttons">
+                    <a href="/docs" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="fas fa-book"></i> View Documentation
+                    </a>
+                    <a href="https://github.com/muhtasim-apon" class="btn btn-secondary btn-lg" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-rocket"></i>
+                    <span>FastAPI Backend</span>
+                </div>
+                <div class="footer-links">
+                    <a href="/"><i class="fas fa-home"></i> Home</a>
+                    <a href="/docs" target="_blank"><i class="fas fa-book"></i> Docs</a>
+                    <a href="https://github.com/muhtasim-apon" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>Built with <i class="fas fa-heart"></i> for Hackathons</p>
+                    <p>&copy; 2024 FastAPI Backend. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="{{ url_for('static', path='/js/script.js') }}"></script>
+</body>
+</html>
